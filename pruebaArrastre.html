@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+      #cajaimagen{
+        display: flex;
+        width: 640px;
+        margin: 30px;
+        border: 1px solid #f00;
+      }
+      #zonadestino{
+        display: flex;
+        width: 640px;
+        height: 550px;
+        margin: 30px;
+        border: 1px solid blue;
+      }
+    </style>
+    <script>
+
+      function comenzar(){
+        let elem_origen=document.getElementById('imagen');
+        elem_origen.addEventListener('dragstart',function(){alert('Comenzo el evento');},false);
+      }
+
+      window.addEventListener('load',comenzar,false);
+
+    </script>
+  </head>
+  <body>
+
+    <section id='cajaimagen'>
+      <img src="./imagenes/abjea.jpg" id="imagen">
+    </section>
+
+    <section id="zonadestino">
+      Arrastre hasta aquí
+    </section>
+
+  </body>
+</html>
