@@ -1,11 +1,11 @@
-const draggableListItems=document.querySelectorAll('dragablle.list li');
+const draggableListItems=document.querySelectorAll('.dragablle.list li');
 const endMessage=document.getElementById('endMessage');
 
 //donde guardaremos la id seleccionada
 let selectedId;
 
 //el lugar donde va, para comparar
-let dropTarget;
+let dropTargetId;
 
 //cuantas frases correctas
 let matchingCounter=0;
@@ -31,13 +31,13 @@ function dragOver(ev){
 function dragDrop(){
     dropTargetId=this.id;
 
-    if(checkForMatch(selected,dropTarget)){
+    if(checkForMatch(selectedId,dropTargetId)){
         document.getElementById(selectedId).style.display='none';
-        document.getElementById(dropTarget).style.display='none';
+        document.getElementById(dropTargetId).style.display='none';
         matchingCounter++;
-    }else if(checkForMatch2(selected,dropTarget)){
+    }else if(checkForMatch2(selectedId,dropTargetId)){
         document.getElementById(selectedId).style.display='none';
-        document.getElementById(dropTarget).style.display='none';
+        document.getElementById(dropTargetId).style.display='none';
         matchingCounter++;
     }
 
@@ -80,6 +80,14 @@ function checkForMatch2(selected,dropTarget){
         default:
             return false;
     }
+}
+
+function playAgain(){
+    matchingCounter = 0;
+    endMessage.style.display = 'none';
+    draggableListItems.forEach(item =>{
+        document.getElementById(item.id).style.display='block';
+    })
 }
 
 function addEventListeners(){
