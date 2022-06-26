@@ -1,0 +1,27 @@
+body{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: yellow;
+}
+
+.texto{
+  width:100px;
+  height: 50px;
+  color: red;
+  background-color: aquamarine;
+  border: 2px solid blue;
+  border-radius: 15px;
+  text-align: center;
+  font-weight: bold;
+  margin: 25px;
+}
+
+.abeja{
+  width: 150px;
+  height: 150px;
+  border-radius: 15px;
+  border: 2px solid blue;
+  margin: 25px;
+}
